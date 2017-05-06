@@ -3,8 +3,10 @@
 #include "TembooAccount.h" // contains Temboo account information, as described below
 
 const int sensorPin= A0;
+const int fan = 8;
 void setup() {
   Serial.begin(9600);
+ pinMode(8,OUTPUT);//configuracion del pin 8
   
   // For debugging, wait until the serial console is connected
   delay(4000);
@@ -34,7 +36,7 @@ void loop() {
     
     // Set Choreo inputs
     SendSMSChoreo.addInput("AuthToken", "5c582b1593093a71678c0cb02b236020");
-    SendSMSChoreo.addInput("To", "+573138675183");
+    SendSMSChoreo.addInput("To", "+573005506480");
     SendSMSChoreo.addInput("From", "+17605306946");
     SendSMSChoreo.addInput("Body", "Muy frio!! " + String(celsius) + " C" + " Abrígate y concéntrate");
     SendSMSChoreo.addInput("AccountSID", "AC87d462151b3882ddaa6ddae78c579843");
@@ -52,7 +54,7 @@ void loop() {
     SendSMSChoreo.close();
   }
   if (celsius > 25 ) {
-
+    digitalWrite(8,HIGH);
     Serial.println("Mandando mensaje");
     TembooChoreo SendSMSChoreo;
 
@@ -82,7 +84,7 @@ void loop() {
       Serial.print(c);
     }
     SendSMSChoreo.close();
-  }
+    }
 
-  delay(3000); // wait 30 seconds between SendSMS calls
+  delay(3000);
 }
