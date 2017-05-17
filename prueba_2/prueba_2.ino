@@ -2,7 +2,7 @@
 #include <Temboo.h>
 #include "TembooAccount.h" // contains Temboo account information, as described below
 
-const int sensorPin= A0;
+const int sensorPin= A1;
 const int fan = 8;
 void setup() {
   Serial.begin(9600);
@@ -21,6 +21,10 @@ void loop() {
   Serial.print(celsius);
   Serial.println(" C");
   delay(1000);
+  if (celsius < 25 )
+  {
+     digitalWrite(8,LOW);
+  }
   if (celsius < 20 ) {
 
     Serial.println("Mandando mensaje");
@@ -38,7 +42,7 @@ void loop() {
     SendSMSChoreo.addInput("AuthToken", "5c582b1593093a71678c0cb02b236020");
     SendSMSChoreo.addInput("To", "+573005506480");
     SendSMSChoreo.addInput("From", "+17605306946");
-    SendSMSChoreo.addInput("Body", "Muy frio!! " + String(celsius) + " C" + " Abrígate y concéntrate");
+    SendSMSChoreo.addInput("Body", "Muy frio!! " + String(celsius) + " C" + " Abrigate y concentrate");
     SendSMSChoreo.addInput("AccountSID", "AC87d462151b3882ddaa6ddae78c579843");
     
     // Identify the Choreo to run
@@ -68,7 +72,7 @@ void loop() {
     
     // Set Choreo inputs
     SendSMSChoreo.addInput("AuthToken", "5c582b1593093a71678c0cb02b236020");
-    SendSMSChoreo.addInput("To", "+573138675183");
+    SendSMSChoreo.addInput("To", "+573005506480");
     SendSMSChoreo.addInput("From", "+17605306946");
     SendSMSChoreo.addInput("Body", "Que calor!! " + String(celsius) + " C" + " Estamos bajando la temperatura. Relajate y estudia.");
     SendSMSChoreo.addInput("AccountSID", "AC87d462151b3882ddaa6ddae78c579843");
