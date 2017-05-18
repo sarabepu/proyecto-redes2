@@ -1,0 +1,36 @@
+<head>
+  <title>Temperatura Web</title>
+  <link href='./prueba.css' rel='stylesheet'>
+  <script type="text/javascript" src="zepto.min.js"></script>
+  <script type="text/javascript">
+        function refresh() {
+            $('#content').load('/arduino/temperature');
+      }
+    </script>
+</head>
+<body onload="setInterval(refresh, 1000);" >
+  <center>
+  <span>La temperatura actual es:</span>
+</center>
+                
+<div class="container">
+    <div class="de">
+        <div class="den">
+          <div class="dene">
+            <div class="denem">
+              <div class="deneme">
+
+                <a id="content">...</a><strong>&deg;</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<p>Sara Maria Bejarano 201122922, Diego Felipe Martinez 201615563 </p>
+<p id="url"></p>
+<script type="text/javascript">
+var x = location.hostname;
+document.getElementById("url").innerHTML = 'IP: ' + x + ' / Puerto: 80';
+</script>
+</body>
