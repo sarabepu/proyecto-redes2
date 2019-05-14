@@ -40,7 +40,7 @@ void loop() {
     
     // Set Choreo inputs
     SendSMSChoreo.addInput("AuthToken", "5c582b1593093a71678c0cb02b236020");
-    SendSMSChoreo.addInput("To", "+573005506480");
+    SendSMSChoreo.addInput("To", "+573138675183");
     SendSMSChoreo.addInput("From", "+17605306946");
     SendSMSChoreo.addInput("Body", "Muy frio!! " + String(celsius) + " C" + " Abrigate y concentrate");
     SendSMSChoreo.addInput("AccountSID", "AC87d462151b3882ddaa6ddae78c579843");
@@ -72,7 +72,7 @@ void loop() {
     
     // Set Choreo inputs
     SendSMSChoreo.addInput("AuthToken", "5c582b1593093a71678c0cb02b236020");
-    SendSMSChoreo.addInput("To", "+573005506480");
+    SendSMSChoreo.addInput("To", "+573138675183");
     SendSMSChoreo.addInput("From", "+17605306946");
     SendSMSChoreo.addInput("Body", "Que calor!! " + String(celsius) + " C" + " Estamos bajando la temperatura. Relajate y estudia.");
     SendSMSChoreo.addInput("AccountSID", "AC87d462151b3882ddaa6ddae78c579843");

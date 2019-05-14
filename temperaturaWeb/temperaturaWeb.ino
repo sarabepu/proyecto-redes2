@@ -14,7 +14,7 @@ void loop() {
     String command = client.readString();
     command.trim();
     if (command == "temperature") {
-      int value = analogRead(A1);
+      int value = analogRead(A0);
     float millivolts = (value / 1023.0) * 5000;
     float celsius = millivolts / 10; 
       client.print(celsius);
